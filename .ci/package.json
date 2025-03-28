@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "eslint ../ --quiet && mocha ../src/server/test/index.test.js --exit"
+  },
+  "testDirs": [
+    "src/server/test"
+  ]
+}

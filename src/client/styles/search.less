@@ -1,0 +1,96 @@
+.search-container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 300px;
+  align-items: center;
+  margin: 0 auto;
+
+  .search-input-group {
+    display: flex;
+    flex-flow: row;
+    gap: 0.5rem;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+
+    input {
+      border: none;
+      outline: none;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1rem;
+      padding: 1rem 0;
+
+      border: none;
+      width: 100%;
+      box-shadow: 0 0 1px 0px rgba(var(--primary-rgb), 0.5);
+      border-radius: 0.5rem;
+      background: var(--background-dark);
+
+      transition: all 200ms;
+      text-align: center;
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:focus {
+        box-shadow: 0 0 3px 1px rgba(var(--primary-rgb), 0.5);
+        background: var(--background-light);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0.9rem;
+      pointer-events: none;
+      transition: all 200ms;
+      background: rgba(var(--background-rgb), 0);
+      backdrop-filter: blur(3px);
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 0 1px 0px rgba(var(--primary-rgb), 0);
+      color: var(--gray);
+    }
+    // Move label up when input is focused or has content
+    &:focus-within,
+    &:not(:has(input:placeholder-shown)) {
+      label {
+        top: -0.5rem;
+        font-size: 0.85rem;
+        color: var(--primary);
+        box-shadow: 0 0 1px 1px rgba(var(--primary-rgb), 0.5);
+        background: rgba(var(--background-rgb), 0.5);
+      }
+      input {
+        padding: 1rem 0;
+        padding-top: 1.25rem;
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+  button {
+    border: none;
+    outline: none;
+    max-width: 200px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-family: var(--font);
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 1rem;
+    font-weight: 500;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 100ms;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.975);
+      background: var(--primary-active);
+    }
+  }
+}
