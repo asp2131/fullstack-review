@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const RepoList = props => (
   <div className="repo-list-container">
     <h2 className="text-center">
-      Top {props.repos.length} repos by YOUR_CRITERIA
+      {props.ponies.length} ponies in our stable
     </h2>
     <ol className="repo-list">
       {
@@ -14,7 +14,7 @@ const RepoList = props => (
 );
 
 RepoList.propTypes = {
-  repos: PropTypes.arrayOf(
+  ponies: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string,
     })

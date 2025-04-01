@@ -27,15 +27,15 @@ class Search extends React.Component {
     return (
       <div className='search-container'>
         <div className='search-input-group'>
-          <label>Github Username</label>
+          <label>Search a Pony</label>
           <input
             value={username}
             onChange={this.handleChange}
-            placeholder='Github Username'
+            placeholder='Pony name'
           />
         </div>
         <button onClick={this.handleClick} type='button'>
-          Add Repos
+          Add Pony
         </button>
       </div>
     );
