@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Pony from './Pony.jsx';
+
 const RepoList = props => (
   <div className="repo-list-container">
     <h2 className="text-center">
-      Top {props.repos.length} repos by YOUR_CRITERIA
+      {props.ponies.length} {props.ponies.length === 1 ? "pony" : props.ponies.length > 1 ? "ponies" : 0} in our little stable 
     </h2>
     <ol className="repo-list">
       {
-        // TODO
+        props.ponies.map(pony => <Pony key={pony.name} pony={pony} />)
       }
     </ol>
   </div>
 );
 
 RepoList.propTypes = {
-  repos: PropTypes.arrayOf(
+  ponies: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string,
     })
